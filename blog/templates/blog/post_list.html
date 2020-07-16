@@ -1,6 +1,21 @@
 <html>
+    <head>
+        <title>My blog</title>
+    </head>
+    
     <body>
-        <h1>my name is Bond</h1>
-        <h2>James Bond</h2>
+
+        <div>
+            <h1><a href="/">My Blog</a></h1>
+        </div>
+     
+        {% for post in posts %}
+            <div>
+                <h2><a href = "">{{ post.title }}</a> </h2>
+                <p>{{ post.text | linebreaksbr }}</p>
+                <p>published: {{ post.published_date }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
